@@ -27,9 +27,7 @@
                     while ($row2 = $stmt2->fetch()){  ?>
                     <div class="item"><img src="images/product/<?php echo $row2['name']; ?>" alt=""></div>
                   <?php } ?>
-
-
-                  </div><a class="popup-youtube ps-product__video" href="http://www.youtube.com/watch?v=0O2aH4XLbto"><img src="images/shoe-detail/1.jpg" alt=""><i class="fa fa-play"></i></a>
+                  </div>
                 </div>
                 <div class="ps-product__image">
                   <div class="item"><img class="zoom" src="images/product/<?php echo $row['img1'] ; ?>" alt="" data-zoom-image="images/product/<?php echo $row['img1'] ; ?>"></div>
@@ -42,8 +40,14 @@
                 </div>
               </div>
               <div class="ps-product__thumbnail--mobile">
-                <div class="ps-product__main-img"><img src="images/shoe-detail/1.jpg" alt=""></div>
-                <div class="ps-product__preview owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="20" data-owl-nav="true" data-owl-dots="false" data-owl-item="3" data-owl-item-xs="3" data-owl-item-sm="3" data-owl-item-md="3" data-owl-item-lg="3" data-owl-duration="1000" data-owl-mousedrag="on"><img src="images/shoe-detail/1.jpg" alt=""><img src="images/shoe-detail/2.jpg" alt=""><img src="images/shoe-detail/3.jpg" alt=""></div>
+                <div class="ps-product__main-img"><img src="images/product/<?php echo $row['img1'] ; ?>" alt=""></div>
+                <div class="ps-product__preview owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="20" data-owl-nav="true" data-owl-dots="false" data-owl-item="3" data-owl-item-xs="3" data-owl-item-sm="3" data-owl-item-md="3" data-owl-item-lg="3" data-owl-duration="1000" data-owl-mousedrag="on">
+                  <img src="images/product/<?php echo $row['img1'] ; ?>" alt="">
+                  <?php
+                  $stmt2 = $db->query("SELECT * FROM img_hub WHERE product_id='$id' ");
+                  while ($row2 = $stmt2->fetch()){  ?>
+                  <img src="images/product/<?php echo $row2['name']; ?>" alt="">
+                <?php } ?></div>
               </div>
               <div class="ps-product__info">
                 <h1><?php echo $row['name']; ?></h1>
@@ -56,7 +60,7 @@
                 <div class="ps-product__block ps-product__style">
                   <h4>CHOOSE YOUR STYLE</h4>
                   <ul>
-                    <li><a href="product-detail.html"><img src="images/shoe/sidebar/1.jpg" alt=""></a></li>
+                    <li><a href="product-detail.html"><img src="images/product/<?php echo $row['img1'] ; ?>" alt=""></a></li>
                     <li><a href="product-detail.html"><img src="images/shoe/sidebar/2.jpg" alt=""></a></li>
                     <li><a href="product-detail.html"><img src="images/shoe/sidebar/3.jpg" alt=""></a></li>
                     <li><a href="product-detail.html"><img src="images/shoe/sidebar/2.jpg" alt=""></a></li>
