@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^dashboard$ index.php [NC,L]
+RewriteRule ^product-view$ product-detail.php [NC,L]
