@@ -55,7 +55,7 @@
                 <h1 class="price">Rs.<?php echo $row['sell_price']; ?></h1>
                 <div class="ps-product__block ps-product__quickview">
                   <h4>QUICK REVIEW</h4>
-                  <p>The Nike Free RN 2017 Men's Running Sky weighs less than previous versions and features an updated knit material…</p>
+                  <p><?php echo $row['about']; ?></p>
                 </div>
                 <div class="ps-product__block ps-product__style">
                   <h4>CHOOSE YOUR STYLE</h4>
