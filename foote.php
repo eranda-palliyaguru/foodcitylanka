@@ -1,5 +1,5 @@
 
-<div class="ps-footer bg--cover" data-background="images/background/parallax.jpg">
+<div class="ps-footer bg--cover" data-background="images/FOOD CITY.png">
   <div class="ps-footer__content">
     <div class="ps-container">
       <div class="row">
