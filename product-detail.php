@@ -129,4 +129,4 @@
       </div>
 
 
-    <?php include('footer.php'); ?>
+    <?php include('foote.php'); ?>
