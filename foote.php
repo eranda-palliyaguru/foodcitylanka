@@ -11,7 +11,7 @@
                 <footer>
                   <p><strong>45/8,High level road , Homagama</strong></p>
                   <p>Email: <a href='mailto:kiriwaththuduwastores67@gmail.com'>kiriwaththuduwastores67@gmail.com</a></p>
-                  <p>Phone: <a href="tel:+94779252594">call</a> 0112 857797</p>
+                  <p>Phone: <a href="tel:+94112857797">0112 857797</a> </p>
 
                 </footer>
               </aside>
