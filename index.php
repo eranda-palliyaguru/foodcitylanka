@@ -55,7 +55,7 @@
                 <div class="grid-sizer"></div>
 
 
-<?php $stmt = $db->query("SELECT * FROM product WHERE action='0' ORDER by id DESC limit 0,11");
+<?php $stmt = $db->query("SELECT * FROM product WHERE action='0' ORDER by id DESC limit 0,25");
 while ($row = $stmt->fetch())
 { $product_id=$row['id'];  ?>
 
