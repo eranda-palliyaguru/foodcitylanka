@@ -50,7 +50,7 @@
 </ul>
           </div>  <br><br>
           <div class="ps-section__content pb-50">
-            <div class="masonry-wrapper" data-col-md="4" data-col-sm="2" data-col-xs="2" data-gap="30" data-radio="100%">
+            <div class="masonry-wrapper" data-col-md="5" data-col-sm="2" data-col-xs="2" data-gap="30" data-radio="100%">
               <div class="ps-masonry">
                 <div class="grid-sizer"></div>
 
