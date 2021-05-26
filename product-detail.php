@@ -53,36 +53,10 @@
                 <h1><?php echo $row['name']; ?></h1>
                 <p class="ps-product__category"><a href="#"> <?php echo $row['brand']; ?></a></p>
                 <h1 class="price">Rs.<?php echo $row['sell_price']; ?></h1>
-                <div class="ps-product__block ps-product__quickview">
-                  <h4>QUICK REVIEW</h4>
-                  <p><?php echo $row['about']; ?></p>
-                </div>
-                <div class="ps-product__block ps-product__style">
-                  <h4>CHOOSE YOUR STYLE</h4>
-                  <ul>
-                    <li><a href="product-detail.html"><img src="images/product/<?php echo $row['img1'] ; ?>" alt=""></a></li>
-                    <li><a href="product-detail.html"><img src="images/shoe/sidebar/2.jpg" alt=""></a></li>
-                    <li><a href="product-detail.html"><img src="images/shoe/sidebar/3.jpg" alt=""></a></li>
-                    <li><a href="product-detail.html"><img src="images/shoe/sidebar/2.jpg" alt=""></a></li>
-                  </ul>
-                </div>
+
                 <div class="ps-product__block ps-product__size">
-                  <h4>CHOOSE SIZE<a href="#">Size chart</a></h4>
-                  <select class="ps-select selectpicker">
-                    <option value="1">Select Size</option>
-                    <option value="2">4</option>
-                    <option value="3">4.5</option>
-                    <option value="3">5</option>
-                    <option value="3">6</option>
-                    <option value="3">6.5</option>
-                    <option value="3">7</option>
-                    <option value="3">7.5</option>
-                    <option value="3">8</option>
-                    <option value="3">8.5</option>
-                    <option value="3">9</option>
-                    <option value="3">9.5</option>
-                    <option value="3">10</option>
-                  </select>
+                  <h4>QTY</h4>
+
                   <div class="form-group">
                     <input class="form-control" type="number" value="1">
                   </div>
@@ -91,10 +65,16 @@
                   <div class="ps-product__actions"><a class="mr-10" href="whishlist.html"><i class="ps-icon-heart"></i></a><a href="compare.html"><i class="ps-icon-share"></i></a></div>
                 </div>
               </div>
+
+
+
               <div class="clearfix"></div>
+
+
+
               <div class="ps-product__content mt-50">
                 <ul class="tab-list" role="tablist">
-                  <li class="active"><a href="#tab_01" aria-controls="tab_01" role="tab" data-toggle="tab">Overview</a></li>
+                  <li class="active"><a href="#tab_01" aria-controls="tab_01" role="tab" data-toggle="tab">About this Product</a></li>
                   <li><a href="#tab_02" aria-controls="tab_02" role="tab" data-toggle="tab">Review</a></li>
                   <li><a href="#tab_03" aria-controls="tab_03" role="tab" data-toggle="tab">PRODUCT TAG</a></li>
                   <li><a href="#tab_04" aria-controls="tab_04" role="tab" data-toggle="tab">ADDITIONAL</a></li>
@@ -102,6 +82,7 @@
               </div>
               <div class="tab-content mb-60">
                 <div class="tab-pane active" role="tabpanel" id="tab_01">
+                    <p><?php echo $row['about']; ?></p>
                 </div>
 
                 <div class="tab-pane" role="tabpanel" id="tab_03">
@@ -122,6 +103,11 @@
                   </div>
                 </div>
               </div>
+
+              <li class="ps-banner" data-index="rs-2972" data-transition="random" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-rotate="0">
+                <img class="rev-slidebg" src="images/slider/ad2.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" data-no-retina>
+                </li>
+
             </div>
           <?php } ?>
           </div>
