@@ -67,7 +67,7 @@ while ($row = $stmt->fetch())
                       </div>
                       <div class="ps-shoe__content">
 
-                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#"><?php echo $row['name'] ; ?></a> <br>
+                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#"><?php echo $row['name'] ; ?> (<?php echo $row['size'] ; ?>)</a> <br>
                           <span style="color: #2BB60F ;  font-size: 20px; font-weight: bold;">Rs <?php echo $row['sell_price']; ?></span>
                           <p class="ps-shoe__categories"><a href="#"><?php echo $row['brand']; ?></a>,
 
