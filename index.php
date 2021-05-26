@@ -39,7 +39,7 @@
       <div class="ps-section--features-product ps-section masonry-root pt-100 pb-100">
         <div class="ps-container">
           <div class="ps-section__header mb-50">
-            <h3 class="ps-section__title" data-mask="PRODUCT">- OUR</h3>
+            <h3 class="ps-section__title" data-mask="PRODUCT"> <img src="images/nestle.png" style="width:150px" alt=""></h3>
             <ul class="ps-masonry__filter">
               <li class="current"><a href="#" data-filter="*">All <sup>8</sup></a></li>
               <?php $stmt = $db->query("SELECT * FROM brand WHERE action='0' ORDER by id DESC limit 0,8");
