@@ -66,10 +66,10 @@ while ($row = $stmt->fetch())
                         <img src="images/product/<?php echo $row['img1'] ; ?>" alt=""><a class="ps-shoe__overlay" href="product-view?id=<?php echo $row['id']; ?>"></a>
                       </div>
                       <div class="ps-shoe__content">
-
+<div class="ps-badge"><span> Rs<?php echo $row['sell_price']; ?></span>    </div>
                         <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#"><?php echo $row['name'] ; ?></a>
-                          <p class="ps-shoe__categories"><a href="#"><?php echo $row['brand']; ?></a>,<span class="ps-shoe__price">
-                           Rs <?php echo $row['sell_price']; ?></span>
+                          <p class="ps-shoe__categories"><a href="#"><?php echo $row['brand']; ?></a>,
+
                         </div>
                       </div>
                     </div>
