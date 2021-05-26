@@ -45,7 +45,7 @@
               <?php $stmt = $db->query("SELECT * FROM brand WHERE action='0' ORDER by id DESC limit 0,8");
               while ($row = $stmt->fetch())
               { $product_id=$row['id'];  ?>
-              <li><a href="#" data-filter=".<?php echo $row['name']; ?>"><img src="images/brand/<?php echo $row['img']; ?>" style="width:70px" alt=""> <sup>.</sup></a></li>
+              <li><a href="#" data-filter=".<?php echo $row['name']; ?>"><img src="images/brand/<?php echo $row['img']; ?>" style="width:60px" alt=""><br><?php echo $row['name']; ?> <sup>.</sup></a></li>
 <?php } ?>
 </ul>
           </div>  <br><br>
