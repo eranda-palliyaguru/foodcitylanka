@@ -2,53 +2,12 @@
 <head>
 <title>Facebook Login JavaScript Example</title>
 <meta charset="UTF-8">
+  <link rel="stylesheet" href="loging.css">
 </head>
 <body>
-<script>
-
-  function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
-    console.log('statusChangeCallback');
-    console.log(response);                   // The current login status of the person.
-    if (response.status === 'connected') {   // Logged into your webpage and Facebook.
-      testAPI();
-    } else {                                 // Not logged into your webpage or we are unable to tell.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this webpage.';
-    }
-  }
 
 
-  function checkLoginState() {               // Called when a person is finished with the Login Button.
-    FB.getLoginStatus(function(response) {   // See the onlogin handler
-      statusChangeCallback(response);
-    });
-  }
-
-
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '205071421445613',
-      cookie     : true,                     // Enable cookies to allow the server to access the session.
-      xfbml      : true,                     // Parse social plugins on this webpage.
-      version    : 'v10.0'           // Use this Graph API version for this call.
-    });
-
-
-    FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
-      statusChangeCallback(response);        // Returns the login status.
-    });
-  };
-
-  function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
-    });
-  }
-
-</script>
+<?php include('facebook.php'); ?>
 
 
 <!-- The JS SDK Login Button -->
@@ -61,5 +20,68 @@
 
 <!-- Load the JS SDK asynchronously -->
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+<h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input type="text" placeholder="Name" />
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<button>Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>Sign in</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<a href="#">Forgot your password?</a>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
 </body>
+<script type="text/javascript">
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+container.classList.remove("right-panel-active");
+});
+</script>
 </html>
