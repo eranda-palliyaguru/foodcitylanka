@@ -50,19 +50,25 @@
                 <?php } ?></div>
               </div>
               <div class="ps-product__info">
-                <h1><?php echo $row['name']; ?></h1>
+                <h1><?php echo $row['name']; ?></h1><h3>(<?php echo $row['size']; ?>)</h3>
                 <p class="ps-product__category"><a href="#"> <?php echo $row['brand']; ?></a></p>
                 <h1 class="price">Rs.<?php echo $row['sell_price']; ?></h1>
 
+
+  <form action="add_cart.php" method="post">
                 <div class="ps-product__block ps-product__size">
                   <h4>QTY</h4>
 
                   <div class="form-group">
-                    <input class="form-control" type="number" value="1">
+                    <input class="form-control" type="number" value="1" name="qty">
                   </div>
                 </div>
-                <div class="ps-product__shopping"><a class="ps-btn mb-10" href="cart.html">Add to cart<i class="ps-icon-next"></i></a>
-                  <div class="ps-product__actions"><a class="mr-10" href="whishlist.html"><i class="ps-icon-heart"></i></a><a href="compare.html"><i class="ps-icon-share"></i></a></div>
+
+
+                <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                <div class="ps-product__shopping"><button class="ps-btn mb-10" type="submit" >Add to cart<i class="ps-icon-next"></i></button>
+
+                  </form>
                 </div>
               </div>
 

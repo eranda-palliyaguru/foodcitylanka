@@ -49,7 +49,7 @@
   <!--[if IE 9]><body class="ie9 lt-ie10"><![endif]-->
   <body class="ps-loading">
 
-    
+
     <div class="header--sidebar"></div>
     <header class="header">
 
@@ -114,37 +114,41 @@
               <input class="form-control" type="text" placeholder="Search Product…">
               <button><i class="ps-icon-search"></i></button>
             </form>
-            <div class="ps-cart"><a class="ps-cart__toggle" href="#"><span><i>20</i></span><i class="ps-icon-shopping-cart"></i></a>
+
+            <?php   if(isset($_COOKIE["ct"])){
+    $cookie_data = stripslashes($_COOKIE['ct']);
+    $cart_data = json_decode($cookie_data, true); ?>
+            <div class="ps-cart"><a class="ps-cart__toggle" href="#"><span><i><?php echo count($cart_data); ?></i></span><i class="ps-icon-shopping-cart"></i></a>
               <div class="ps-cart__listing">
                 <div class="ps-cart__content">
+
+            <?php
+    $i=0;$tot=0;$tot_qty=0;
+    foreach($cart_data as $i => $values ){
+  $pro=$values['id'];
+      $stmt = $db->query("SELECT * FROM product WHERE id='$pro' ");
+     while ($row = $stmt->fetch())
+     { $price=$row['sell_price']*$values['qty'];  }
+     ?>
+
                   <div class="ps-cart-item"><a class="ps-cart-item__close" href="#"></a>
-                    <div class="ps-cart-item__thumbnail"><a href="product-detail.html"></a><img src="images/cart-preview/1.jpg" alt=""></div>
-                    <div class="ps-cart-item__content"><a class="ps-cart-item__title" href="product-detail.html">Amazin’ Glazin’</a>
-                      <p><span>Quantity:<i>12</i></span><span>Total:<i>£176</i></span></p>
+                    <div class="ps-cart-item__thumbnail"><a href="product-detail.html"></a><img src="images/product/<?php  echo $values['img']; ?>" alt=""></div>
+                    <div class="ps-cart-item__content"><a class="ps-cart-item__title" href="product-detail.html"><?php  echo $values['name']; ?></a>
+                      <p><span>Quantity:<i><?php  echo $values['qty']; ?></i></span><span>Total:<i>Rs.<?php echo $price; ?></i></span></p>
                     </div>
                   </div>
-                  <div class="ps-cart-item"><a class="ps-cart-item__close" href="#"></a>
-                    <div class="ps-cart-item__thumbnail"><a href="product-detail.html"></a><img src="images/cart-preview/2.jpg" alt=""></div>
-                    <div class="ps-cart-item__content"><a class="ps-cart-item__title" href="product-detail.html">The Crusty Croissant</a>
-                      <p><span>Quantity:<i>12</i></span><span>Total:<i>£176</i></span></p>
-                    </div>
-                  </div>
-                  <div class="ps-cart-item"><a class="ps-cart-item__close" href="#"></a>
-                    <div class="ps-cart-item__thumbnail"><a href="product-detail.html"></a><img src="images/cart-preview/3.jpg" alt=""></div>
-                    <div class="ps-cart-item__content"><a class="ps-cart-item__title" href="product-detail.html">The Rolling Pin</a>
-                      <p><span>Quantity:<i>12</i></span><span>Total:<i>£176</i></span></p>
-                    </div>
-                  </div>
+<?php $i+=1; $tot+=$price; $tot_qty+=$values['qty']; }  ?>
                 </div>
                 <div class="ps-cart__total">
-                  <p>Number of items:<span>36</span></p>
-                  <p>Item Total:<span>£528.00</span></p>
+                  <p>Number of items:<span><?php echo $tot_qty; ?></span></p>
+                  <p>Item Total:<span>Rs.<?php echo number_format($tot,2); ?></span></p>
                 </div>
                 <div class="ps-cart__footer"><a class="ps-btn" href="cart.html">Check out<i class="ps-icon-arrow-left"></i></a></div>
               </div>
             </div>
-            <div class="menu-toggle"><span></span></div>
+            <div class="menu-toggle"><span></span></div> <?php } ?>
           </div>
+
         </div>
       </nav>
     </header>
