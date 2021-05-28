@@ -40,13 +40,13 @@ include('facebook.php');
 $message = "success";
  				// Username is stored as cookie for 10 years as
  				// 10years * 365days * 24hrs * 60mins * 60secs
- 				setcookie("user_login", $name, time() +
- 									(10 * 365 * 24 * 60 * 60));
+ 				setcookie("user_login", $name, time() +	(10 * 365 * 24 * 60 * 60));
 
  				// Password is stored as cookie for 10 years as
  				// 10years * 365days * 24hrs * 60mins * 60secs
- 				setcookie("user_password", $password, time() +
- 									(10 * 365 * 24 * 60 * 60));
+
+ 			//	setcookie("user_password", $password, time() +
+ 			//						(10 * 365 * 24 * 60 * 60));
 
  				// After setting cookies the session variable will be set
  				$_SESSION["name"] = $name;

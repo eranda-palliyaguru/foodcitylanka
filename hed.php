@@ -53,6 +53,32 @@
     <div class="header--sidebar"></div>
     <header class="header">
 
+      <div class="header__top">
+        <div class="container-fluid">
+          <div class="row">
+                <div class="col-lg-6 col-md-8 col-sm-6 col-xs-12 ">
+                  <p>45/8,High level road , Homagama  -  Hotline: <a href="tel:+94112857797">+94 11-2857797</a></p>
+                </div>
+                <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 ">
+                  <div class="header__actions">
+<?php session_start();
+if (isset($_SESSION["name"]))
+{ ?>
+                    <a href="#">hello <i  style="color:red; font-size: 18px"> <?php echo $_SESSION['name']; ?></i> </a> 
+<?php }else { ?> <a href="login">Login and Register</a> <?php } ?>
+                    <div class="btn-group ps-dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SL Rs.<i class="fa fa-angle-down"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#"> SL Rs.</a></li>
+
+                      </ul>
+                    </div>
+
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+
       <nav class="navigation">
         <div class="container-fluid">
           <div class="navigation__column left">
@@ -131,7 +157,7 @@
      { $price=$row['sell_price']*$values['qty'];  }
      ?>
 
-                  <div class="ps-cart-item"><a class="ps-cart-item__close" href="#"></a>
+                  <div class="ps-cart-item"><a class="ps-cart-item__close" href="cart_dll.php?id=<?php echo $i; ?>"></a>
                     <div class="ps-cart-item__thumbnail"><a href="product-detail.html"></a><img src="images/product/<?php  echo $values['img']; ?>" alt=""></div>
                     <div class="ps-cart-item__content"><a class="ps-cart-item__title" href="product-detail.html"><?php  echo $values['name']; ?></a>
                       <p><span>Quantity:<i><?php  echo $values['qty']; ?></i></span><span>Total:<i>Rs.<?php echo $price; ?></i></span></p>
@@ -143,10 +169,12 @@
                   <p>Number of items:<span><?php echo $tot_qty; ?></span></p>
                   <p>Item Total:<span>Rs.<?php echo number_format($tot,2); ?></span></p>
                 </div>
-                <div class="ps-cart__footer"><a class="ps-btn" href="cart.html">Check out<i class="ps-icon-arrow-left"></i></a></div>
+                <div class="ps-cart__footer"><a class="ps-btn" href="cart">Check out<i class="ps-icon-arrow-left"></i></a></div>
               </div>
             </div>
             <div class="menu-toggle"><span></span></div> <?php } ?>
+
+
           </div>
 
         </div>

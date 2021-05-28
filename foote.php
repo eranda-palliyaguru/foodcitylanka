@@ -73,10 +73,8 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
               <ul class="ps-social">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.facebook.com/Food-City-Lanka-101852465436663/?modal=composer&notif_id=1622115152982313&notif_t=aymt_simplified_make_page_post&ref=notif"><i class="fa fa-facebook"></i></a></li>
+                
               </ul>
             </div>
       </div>
