@@ -72,6 +72,16 @@ while ($row = $stmt->fetch())
                         <img src="images/product/<?php echo $row['img1'] ; ?>" alt=""><a class="ps-shoe__overlay" href="product-view?id=<?php echo $row['id']; ?>"></a>
                       </div>
                       <div class="ps-shoe__content">
+                        <div class="ps-shoe__variants"> <br>
+
+                          <form  action="add_cart.php" method="post">
+                            <input type="hidden" name="id" value="<?php echo $product_id; ?>">
+                            <input type="number" class="ps-btn ps-btn--gray" style="width:100px;" name="qty" value="1">
+                            <input type="submit" class="ps-btn" value="ADD CART">
+                          </form>
+
+
+                        </div>
 
                         <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#"><?php echo $row['name'] ; ?> (<?php echo $row['size'] ; ?>)</a> <br>
                           <span style="color: #2BB60F ;  font-size: 20px; font-weight: bold;">Rs <?php echo $row['sell_price']; ?></span>
